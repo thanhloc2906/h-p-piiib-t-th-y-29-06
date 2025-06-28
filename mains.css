@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+html,
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.startForm {
+    z-index: 7;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(72, 209, 204, 1);
+}
+
+.startLetter {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, -90%);
+    background-color: white;
+    max-height: 500px;
+    width: 800px;
+    padding: 20px;
+    padding-bottom: 80px !important;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.startLetter.active {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .5s;
+}
+
+.contentLetter::-webkit-scrollbar {
+    background-color: white;
+    width: 4px;
+}
+
+.contentLetter::-webkit-scrollbar-thumb {
+    background-color: pink;
+}
+
+.contentLetter {
+    background-color: whitesmoke;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 34px;
+    padding: 20px;
+    font-family: 'Dancing Script', cursive !important;
+}
+
+.myAI {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    height: 100px;
+}
+
+.sticker {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(60%);
+    content: "";
+    height: 100px;
+    width: 40px;
+    background-color: pink;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+    border-radius: 10px;
+    animation: animateStartLetter 1s ease-in-out infinite alternate;
+}
+
+.sticker::before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    background-color: white;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: solid 6px rgb(253, 178, 191);
+}
+
+.recieve {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: fit-content;
+    width: fit-content;
+    background-color: transparent;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    opacity: 0;
+    transition: .5s;
+}
+
+.recieve:hover {
